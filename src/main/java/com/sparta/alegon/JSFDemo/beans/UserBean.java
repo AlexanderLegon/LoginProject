@@ -21,7 +21,19 @@ public class UserBean {
         this.user = user;
     }
 
-    public String addUser(){
-        return "welcome";
+    public String validUser() {
+        LoginChecker loginChecker = new LoginChecker();
+        int temp = loginChecker.check(user.getName(), user.getPassword());
+        if (temp == 1) {
+            return "welcome";
+        }
+        if (temp == 2) {
+            return "potato";
+        }
+        if (temp == 3) {
+            return "potato";
+        }
+        return "potato";
     }
 }
+

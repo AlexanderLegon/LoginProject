@@ -15,8 +15,10 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Enter your name:"/>
-                <h:inputText value="#{userBean.user.username}"/>
-                <h:commandButton value="Submit" action="#{userBean.addUser}"/>
+                <h:inputText value="#{userBean.user.name}"/>
+                <h:outputLabel value="Enter your password:"/>
+                <h:inputSecret value="#{userBean.user.password}"/>
+                <h:commandButton value="Submit" action="#{userBean.validUser}"/>
             </h:panelGrid>
         </h:form>
             </ui:define>
