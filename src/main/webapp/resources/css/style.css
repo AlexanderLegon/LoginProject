@@ -1,4 +1,7 @@
 body{
-    background-color: cadetblue;
+    background-color: darkseagreen;
     font-family: "fantasy";
+    border: skyblue;
+    margin-left: 40px;
+    align: "center"
 }

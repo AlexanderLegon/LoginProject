@@ -1,7 +1,6 @@
-package com.sparta.alegon.JSFDemo.entities;
+package com.sparta.alegon.LoginProject.entities;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
