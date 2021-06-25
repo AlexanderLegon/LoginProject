@@ -10,7 +10,23 @@ public class LocalUser {
    private static ArrayList<User> userList = new ArrayList<>(Arrays.asList(
            new User("4ply", "paper", true),
            new User("1ply", "paper", false),
-           new User("MRmeme", "paper", false)));
+           new User("MRmeme", "paper", false),
+           new User("shutit", "paper", false),
+           new User("2ply", "paper", false),
+           new User("3ply", "paper", false),
+           new User(".5ply", "paper", false),
+           new User("MRsmeme", "paper", false),
+           new User("craphouse", "paper", false),
+           new User("tissue", "paper", false),
+           new User("ThePope", "paper", false),
+           new User("Luxury", "paper", false),
+           new User("Stinker", "paper", false),
+           new User("Sh*thouse", "paper", false),
+           new User("Outhouse", "paper", false),
+           new User("ThePit", "paper", false),
+           new User("Bog", "paper", false),
+           new User("lavatory", "paper", false)));
+
 
    public static void addUser(User user) {
       userList.add(user);
@@ -50,6 +66,19 @@ public class LocalUser {
          tempNames.add(user.getUsername());
       }
       return tempNames;
+   }
+
+   public static boolean checkUser(User user) {
+      for(User localUser : userList)
+      {
+         if (localUser.getUsername().equals(user.getUsername()))
+         {
+            return true;
+         }
+
+      }
+      return false;
+
    }
 }
 

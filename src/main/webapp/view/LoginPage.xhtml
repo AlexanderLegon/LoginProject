@@ -12,8 +12,8 @@
    <h:body>
       <ui:composition template="/WEB-INF/templates/template.xhtml">
          <ui:define name="content">
-            <div align="center" style="border:10px solid gold;">
-            <h:form>
+            <div align="center">
+            <h:form style="border:10px solid gold; max-width: 200px">
                <h:panelGrid columns="1">
                   <h:outputLabel value="Enter your name:"/>
                   <h:inputText value="#{userBean.user.username}"/>
@@ -24,9 +24,12 @@
                   <h:commandButton value="Login" action="#{userBean.validUser}"/>
                </h:panelGrid>
             </h:form>
+               <p style = "background-color:yellow; width:200px; color:red" > #{userBean.loginError}</p>
             </div>
             <br/>
-            <p Style = "color:red"> #{userBean.loginError}</p>
+            <div align="center">
+               <h:graphicImage library="images" name="login.png" alt="Funny image" style="width:1000px;height: 600px" />
+            </div>
          </ui:define>
       </ui:composition>
    </h:body>

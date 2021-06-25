@@ -12,9 +12,14 @@
 <h:body>
    <ui:composition template="/WEB-INF/templates/template.xhtml">
       <ui:define name="content">
-         <h:outputLabel style = "font-size:200%; align:center">Welcome #{userBean.user.username}</h:outputLabel>
+         <h:outputLabel style="font-size: 500%">Welcome </h:outputLabel>
+         <h:outputLabel style="font-size: 500%">#{userBean.user.username}</h:outputLabel>
          <br/>
          <h:graphicImage library="images" name="welcome.gif" alt="Funny image" style="width:1800px;height: 1000px" />
+         <br/>
+         <h:form>
+            <h:commandButton value="Logout" action="#{adminBean.logout}"/>
+         </h:form>
       </ui:define>
    </ui:composition>
 </h:body>

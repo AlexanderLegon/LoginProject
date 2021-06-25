@@ -10,11 +10,17 @@
         <title>Admin Page</title>
     </h:head>
     <h:body>
+
         <ui:composition template="/WEB-INF/templates/template.xhtml">
             <ui:define name="content">
-                <h:outputLabel>Welcome #{userBean.user.username}</h:outputLabel>
-                <br/>
 
+                <div align="center" >
+                    <div style = "border:10px solid gold; max-width: 500px">
+
+
+                    <h:outputLabel style="font-size: 500%">Welcome </h:outputLabel>
+                    <h:outputLabel style="font-size: 500%">#{userBean.user.username}</h:outputLabel>
+                <br/>
 
                 <h:form>
                     <h1>Select a user by the dropdown</h1>
@@ -28,65 +34,50 @@
                     <h:commandButton value="Demote" action="#{adminBean.demoteAdmin}"/>
                     <br/>
                 </h:form>
-                <p Style = "color:red"> #{adminBean.removalStatus}</p>
+                <p style = "background-color:yellow; width:200px; color:red"> #{adminBean.removalStatus}</p>
                 <h:form>
                         <h1>Select a user by text box</h1>
                     <h:outputLabel value="Enter a name:"/>
                     <h:inputText value="#{adminBean.user.username}"/>
                     <br/>
                     <br/>
-                <h:commandButton value="Remove" action="#{adminBean.removeUser}"/>
-                <h:commandButton value="Promote" action="#{adminBean.promoteAdmin}"/>
-                <h:commandButton value="Demote" action="#{adminBean.demoteAdmin}"/>
+                <h:commandButton value="Remove" action="#{adminBean.removeUserText}"/>
+                <h:commandButton value="Promote" action="#{adminBean.promoteAdminText}"/>
+                <h:commandButton value="Demote" action="#{adminBean.demoteAdminText}"/>
                 </h:form>
-                <p Style = "color:red"> #{adminBean.removalStatus}</p>
+                <p style = "background-color:yellow; width:200px; color:red"> #{adminBean.removalStatusText}</p>
                 <br/>
                 <h:form>
-                <h1>Too add a new user input data below</h1>
+                <h1>To add a new user input data below</h1>
                 <h:outputLabel value="Enter a name:"/>
                 <h:inputText value="#{adminBean.user.username}"/>
+                    <br/>
+                    <br/>
                 <h:outputLabel value="Enter a password:"/>
                 <h:inputText value="#{adminBean.user.password}"/>
+                    <br/>
+                    <br/>
                 <h:commandButton value="Add" action="#{adminBean.addUser}"/>
+                    <p style = "background-color:yellow; width:200px; color:red"> #{adminBean.userStatus}</p>
+                    <br/>
                 </h:form>
+                <br/>
+                <h:form>
+                <h:commandButton value="Logout" action="#{adminBean.logout}"/>
+                    <br/>
+                    <br/>
+                </h:form>
+
+                    </div>
+                </div>
+                <br/>
+                <div align="center">
+                <h:graphicImage library="images" name="admin.png" alt="Funny image" style="width:800px;height: 600px" />
+                </div>
+                <br/>
             </ui:define>
         </ui:composition>
+
     </h:body>
 </f:view>
 </html>
-        <!--<?xml version="1.0" encoding="UTF-8"?>-->
-        <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
-        <!--        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
-        <!--<html xmlns="http://www.w3.org/1999/xhtml"-->
-        <!--      xmlns:h="http://xmlns.jcp.org/jsf/html"-->
-        <!--      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"-->
-        <!--      xmlns:f="http://xmlns.jcp.org/jsf/core">-->
-        <!--<f:view>-->
-        <!--   <h:head>-->
-        <!--      <title>Admin Page</title>-->
-        <!--   </h:head>-->
-        <!--   <h:body>-->
-        <!--       <h1>Welcome</h1>-->
-        <!--            <h:outputLabel>Welcome #{adminBean.user.username}</h:outputLabel>-->
-        <!--&lt;!&ndash;      <ui:composition template="/WEB-INF/templates/template.xhtml">&ndash;&gt;-->
-        <!--&lt;!&ndash;         <ui:define name="content">&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:outputLabel>Welcome #{userBean.user.username}</h:outputLabel>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;            <h:outputLabel>Enter your name:</h:outputLabel>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:inputText value="#{adminBean.getUser.username}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:outputLabel value="Enter your password:"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:inputSecret value="#{adminBean.user.password}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:commandButton value="Add" action="#{adminBean.addUser}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:commandButton value="Remove" action="#{adminBean.removeUser}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:commandButton value="Promote" action="#{adminBean.promoteAdmin}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h:commandButton value="Demote" action="#{adminBean.demoteAdmin}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <h1>Choose a user</h1>&ndash;&gt;-->
-        <!--&lt;!&ndash;               <h:selectOneMenu value="#{adminBean.getUserList()}">&ndash;&gt;-->
-        <!--&lt;!&ndash;                  <f:selectItems value="#{adminBean.getUserList()}"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;               </h:selectOneMenu>&ndash;&gt;-->
-        <!--&lt;!&ndash;         </ui:define>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;      </ui:composition>&ndash;&gt;-->
-        <!--   </h:body>-->
-        <!--</f:view>-->
-        <!--</html>-->
