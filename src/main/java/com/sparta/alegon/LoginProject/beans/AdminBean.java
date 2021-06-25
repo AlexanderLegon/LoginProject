@@ -51,12 +51,16 @@ public class AdminBean {
     }
 
     public void addUser() {
-        if (LocalUser.checkUser(user)){
-            userStatus = "This user already exists";
-        } else {
-            LocalUser.addUser(user);
-            userStatus = "User created";
-        }
+        if (!(user.getUsername() == null || user.getUsername().equals(""))) {
+            if(!(user.getPassword() == null || user.getPassword().equals(""))) {
+                if (LocalUser.checkUser(user)) {
+                    userStatus = "This user already exists";
+                } else {
+                    LocalUser.addUser(user);
+                    userStatus = "User created";
+                }
+            }else {userStatus = "cant create a user with a blank password";}
+        } else {userStatus = "cant create a user with a blank username";}
     }
 
     public void removeUser() {
